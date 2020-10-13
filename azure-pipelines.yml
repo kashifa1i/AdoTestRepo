@@ -25,7 +25,6 @@ pr:
 
 jobs:
 - job: developDepoy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
   steps:
     - task: UseNode@1
     - bash: 
