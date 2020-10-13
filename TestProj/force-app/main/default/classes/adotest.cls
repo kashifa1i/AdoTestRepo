@@ -1,5 +1,6 @@
 public with sharing class adotest {
-    public adotest() {
-
+    public adotest() 
+    {
+        //my comment
     }
 }
