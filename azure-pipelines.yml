@@ -34,11 +34,5 @@ jobs:
         sfdx force:auth:jwt:grant --clientid $(salesforceOrgClientId) --jwtkeyfile ./TestProj/buildfiles/server.key --username $(salesforceUserName) --instanceurl $(salesforceInstanceUrl) -a developer
       displayName: Authorize salesforce org
     - bash: 
-        sfdx force:source:convert -d ./TestProj/src
-      displayName: Convert to deploy source
-    - bash: 
-        sfdx force:mdapi:deploy -l RunLocalTests -c -d ./src -u developer -w 10
-      displayName: Run validation on source code
-    - bash: 
-        sfdx force:mdapi:deploy -d ./src -u developer -w 10
+        sfdx force:source:deploy -d ./TestProj/force-app/ -u developer -w 10
       displayName: Deploy source code to Production
