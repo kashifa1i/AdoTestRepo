@@ -34,5 +34,5 @@ jobs:
         sfdx force:auth:jwt:grant --clientid $(salesforceOrgClientId) --jwtkeyfile ./TestProj/buildfiles/server.key --username $(salesforceUserName) --instanceurl $(salesforceInstanceUrl) -a developer
       displayName: Authorize salesforce org
     - bash: 
-        sfdx force:source:deploy -m ApexClass -u developer -w 10
+        sfdx force:source:deploy -p ./TestProj/force-app/main/default/classes -u developer -w 10
       displayName: Deploy source code to Production
